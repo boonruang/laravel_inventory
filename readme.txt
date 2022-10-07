@@ -45,3 +45,4 @@ php artisan r:l
 implements MustVerifyEmail in App\Models\user
 
 register and verify email done!!
+mailtrap.io
