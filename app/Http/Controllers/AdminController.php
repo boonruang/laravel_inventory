@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
@@ -19,10 +20,15 @@ class AdminController extends Controller
         return redirect('/login');
     } // End method
 
-    public function Profile(Request $request) {
+    public function Profile() {
         $id = Auth::user()->id;
         $adminData = User::find($id);
         return view('admin.admin_profile_view',compact('adminData'));
-
     }
+
+    public function EditProfile(){
+        $id = Auth::user()->id;
+        $editData = User::find($id);
+        return view('admin.admin_profile_edit',compact('editData'));
+        }
 }
