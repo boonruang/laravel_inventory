@@ -13,29 +13,47 @@
 
             <h4 class="card-title">Edit Profile Page</h4>
 
-            <form class="form-horizontal mt-3" method="POST" action="{{route('storeprofile')}}">
-                @csrf                                
+            <form method="post" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+                @csrf
 
-                <div class="form-group mb-3 row">
-                    <div class="col-12">
-                        <input class="form-control" id="username" type="text" name="username" required="" placeholder="Username">
-                    </div>
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input name="name" class="form-control" type="text" value="{{$editData->name}}" id="example-text-input">
                 </div>
+            </div>
 
-                <div class="form-group mb-3 row">
-                    <div class="col-12">
-                        <input class="form-control"  id="password" type="password" name="password" required="" placeholder="Password">
-                    </div>
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">User Email</label>
+                <div class="col-sm-10">
+                    <input name="email" class="form-control" type="email" value="{{$editData->email}}" id="example-text-input">
                 </div>
+            </div>
 
-
-                <div class="form-group mb-3 text-center row mt-3 pt-1">
-                    <div class="col-12">
-                        <button class="btn btn-info w-100 waves-effect waves-light" type="submit">Log In</button>
-                    </div>
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">UserName</label>
+                <div class="col-sm-10">
+                    <input name="username" class="form-control" type="text" value="{{$editData->username}}" id="example-text-input">
                 </div>
+            </div>
 
-            </form>
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label">Profile Image</label>
+                <div class="col-sm-10">
+                    <input name="profile_image" class="form-control" type="file" id="image">
+                </div>
+            </div>     
+            
+            <div class="row mb-3">
+                <label for="example-text-input" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <img id="showImage" class="rounded" style="width:200px" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap">
+                </div>
+            </div>     
+            
+            <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Profile">
+
+        </form>
         <!-- end row -->
  
         </div>

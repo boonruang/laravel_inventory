@@ -16,16 +16,11 @@ Route::controller(DemoController::class)->group(function() {
 
 // Admin All Route
 Route::controller(AdminController::class)->group(function() {
-    Route::get('/admin/logout','destroy')->name('admin1.logout');
+    Route::get('/admin/logout','destroy')->name('admin.logout');
     Route::get('/admin/profile','Profile')->name('admin.profile');
     Route::get('/edit/profile','EditProfile')->name('edit.profile');
-    // Route::get('/store/profile','StoreProfile')->name('store.profile');
     Route::post('/store/profile','StoreProfile')->name('store.profile');
-    Route::post('/admin/test','testProfile')->name('storeprofile');
 });
-
-
-
 
 Route::get('/dashboard', function () {
     return view('admin.index');

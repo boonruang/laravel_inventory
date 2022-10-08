@@ -50,3 +50,5 @@ mailtrap.io
 php artisan cache:clear
 
 php artisan optimize
+
+php artisan route:cache
