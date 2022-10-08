@@ -39,6 +39,14 @@ breeze done!
 login & register done!
 
 
+login with username
+add username to Auth/RegisteredUserController
+add username to Models/User
+
+email->username in App/Http/Requests/Auth/LoginRequest.php
+1. authenticate function
+2. rule function
+
 route list
 php artisan r:l
 
