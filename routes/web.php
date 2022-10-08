@@ -21,6 +21,7 @@ Route::controller(AdminController::class)->group(function() {
     Route::get('/edit/profile','EditProfile')->name('edit.profile');
     // Route::get('/store/profile','StoreProfile')->name('store.profile');
     Route::post('/store/profile','StoreProfile')->name('store.profile');
+    Route::post('/admin/test','testProfile')->name('storeprofile');
 });
 
 

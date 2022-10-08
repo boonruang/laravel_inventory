@@ -51,5 +51,9 @@ class AdminController extends Controller
         return redirect()->route('admin.profile');
     }
 
+    public function testProfile(){
+        return view('hello!');
+    }
+
 }
 
