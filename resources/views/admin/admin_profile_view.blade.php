@@ -9,7 +9,7 @@
             <div class="card">
                 <br><br>
                 <center>
-                <img class="rounded-circle avatar-xl" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap">
+                <img class="rounded" style="width:200px" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap">
                 </center>
                 <div class="card-body">
                     <h4 class="card-title">Name :  {{$adminData->name}}</h4>
