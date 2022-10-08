@@ -38,7 +38,6 @@ php artisan migrate
 breeze done!
 login & register done!
 
-
 login with username
 add username to Auth/RegisteredUserController
 add username to Models/User
@@ -56,9 +55,14 @@ register and verify email done!!
 mailtrap.io
 
 php artisan cache:clear
-
 php artisan optimize
 
+clear route !important
 php artisan route:cache
 
 toastr notification
+
+before backup please run 3 command below
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
