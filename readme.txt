@@ -71,3 +71,8 @@ zip basic folder and export sql
 
 #frontend
 
+php artisan make:model HomeSlide -m
+-m create migration 
+
+php artisan migrate
+
