@@ -6,7 +6,8 @@ use App\Http\Controllers\AdminController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('frontend.index');
 });
 
 Route::controller(DemoController::class)->group(function() {

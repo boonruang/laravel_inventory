@@ -66,3 +66,8 @@ before backup please run 3 command below
 php artisan config:clear
 php artisan cache:clear
 php artisan view:clear
+
+zip basic folder and export sql
+
+#frontend
+
