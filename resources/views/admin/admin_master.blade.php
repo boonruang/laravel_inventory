@@ -33,7 +33,10 @@
 
     </head>
 
-    <body data-topbar="dark" class="sidebar-enable vertical-collpsed">
+{{-- 
+    <body data-topbar="dark" class="sidebar-enable vertical-collpsed"> --}}
+
+    <body data-topbar="dark" class="sidebar-enable">
     
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 

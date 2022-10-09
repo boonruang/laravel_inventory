@@ -76,3 +76,4 @@ php artisan make:model HomeSlide -m
 
 php artisan migrate
 
+php artisan make:controller Home/HomeSliderController
