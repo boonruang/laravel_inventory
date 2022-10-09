@@ -77,3 +77,9 @@ php artisan make:model HomeSlide -m
 php artisan migrate
 
 php artisan make:controller Home/HomeSliderController
+
+Image intervention
+composer require intervention/image
+config
+publish
+
