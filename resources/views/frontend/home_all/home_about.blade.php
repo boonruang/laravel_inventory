@@ -1,5 +1,5 @@
 @php
-$aboutData = App\Models\About::find(1);
+$aboutpage = App\Models\About::find(1);
 @endphp
 
 <section id="aboutSection" class="about">
@@ -40,18 +40,18 @@ $aboutData = App\Models\About::find(1);
             <div class="col-lg-6">
                 <div class="about__content">
                     <div class="section__title">
-                        <span class="sub-title">{{$aboutData->title}}</span>
-                        <h2 class="title">{{$aboutData->short_title}}</h2>
+                        <span class="sub-title">01 - ABOUT ME</span>
+                        <h2 class="title">{{$aboutpage->title}}</h2>
                     </div>
                     <div class="about__exp">
                         <div class="about__exp__icon">
-                            <img src="{{$aboutData->about_image}}" alt="">
+                            <img src="{{$aboutpage->about_image}}" alt="">
                         </div>
                         <div class="about__exp__content">
-                            <p>{{$aboutData->short_description}}</p>
+                            <p>{{$aboutpage->short_title}}</p>
                         </div>
                     </div>
-                    <p class="desc">{{$aboutData->long_description}}</p>
+                    <p class="desc">{{$aboutpage->short_description}}</p>
                     <a href="about.html" class="btn">Download my resume</a>
                 </div>
             </div>
