@@ -85,3 +85,6 @@ publish
 
 php artisan make:model About -m
 php artisan migrate
+
+php artisan make:model MultiImage -m
+php artisan migrate
