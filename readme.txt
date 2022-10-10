@@ -83,3 +83,5 @@ composer require intervention/image
 config
 publish
 
+php artisan make:model About -m
+php artisan migrate
