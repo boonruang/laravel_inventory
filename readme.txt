@@ -73,9 +73,7 @@ zip basic folder and export sql
 
 php artisan make:model HomeSlide -m
 -m create migration 
-
 php artisan migrate
-
 php artisan make:controller Home/HomeSliderController
 
 Image intervention
@@ -85,6 +83,11 @@ publish
 
 php artisan make:model About -m
 php artisan migrate
+php artisan make:controller About/AboutController
 
 php artisan make:model MultiImage -m
 php artisan migrate
+
+php artisan make:model Portfolio -m
+php artisan migrate
+php artisan make:controller Home/PortfolioController
