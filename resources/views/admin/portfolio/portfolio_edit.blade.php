@@ -11,7 +11,7 @@
     <div class="card">
         <div class="card-body">
 
-        <h4 class="card-title">Update Portfolio</h4><br>
+        <h4 class="card-title">Portfolio Edit Page</h4><br>
         
 
         <form method="post" action="{{route('update.portfolio')}}" enctype="multipart/form-data">
@@ -59,7 +59,7 @@
         </div>      
 
         
-        <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Portfolio">
+        <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Portfolio Data">
 
     </form>
     <!-- end row -->

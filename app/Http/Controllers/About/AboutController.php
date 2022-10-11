@@ -22,7 +22,7 @@ class AboutController extends Controller
         if ($request->file('about_image')) {
             $image = $request->file('about_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension(); // 46443216545.jpg
-            Image::make($image)->resize(523,605)->save('upload/home_about/'.$name_gen);
+            Image::make($image)->fit(523,605)->save('upload/home_about/'.$name_gen);
             $save_url = 'upload/home_about/'.$name_gen;
 
             About::findOrFail($about_id)->update([
@@ -74,7 +74,7 @@ class AboutController extends Controller
 
            $name_gen = hexdec(uniqid()).'.'.$multi_image->getClientOriginalExtension(); // 46443216545.jpg
 
-            Image::make($multi_image)->resize(220,220)->save('upload/multi/'.$name_gen);
+            Image::make($multi_image)->fit(220,220)->save('upload/multi/'.$name_gen);
             $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::insert([
@@ -110,7 +110,7 @@ class AboutController extends Controller
         if ($request->file('multi_image')) {
             $image = $request->file('multi_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension(); // 46443216545.jpg
-            Image::make($image)->resize(220,220)->save('upload/multi/'.$name_gen);
+            Image::make($image)->fit(220,220)->save('upload/multi/'.$name_gen);
             $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::findOrFail($multi_image_id)->update([

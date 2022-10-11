@@ -21,7 +21,7 @@ class HomeSliderController extends Controller
         if ($request->file('home_slide')) {
             $image = $request->file('home_slide');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension(); // 46443216545.jpg
-            Image::make($image)->resize(636,852)->save('upload/home_slide/'.$name_gen);
+            Image::make($image)->fit(636,852)->save('upload/home_slide/'.$name_gen);
             $save_url = 'upload/home_slide/'.$name_gen;
 
             HomeSlide::findOrFail($slide_id)->update([
