@@ -113,4 +113,11 @@ class BlogController extends Controller
         return redirect()->back()->with($notification);    
     } //End Method
 
+    public function BlogDetails($id) {
+        $allblogs = Blog::latest()->limit(5)->get();
+        $allcategories = BlogCategory::latest()->limit(5)->get();
+        $blogs = Blog::findOrFail($id);
+        return view('frontend.blog_details',compact('blogs','allblogs','allcategories'));
+    } //End Method  
+
 }
