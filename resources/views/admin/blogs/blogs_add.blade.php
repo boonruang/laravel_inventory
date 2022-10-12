@@ -6,7 +6,9 @@
 <style type="text/css">
     .bootstrap-tagsinput .tag{
         margin-right: 2px;
-        color: #b70000;
+        /* color: #b70000; */
+        color: #fff;
+        background-color: #5bc0de;
         font-weight: 700px;
     } 
 </style>
@@ -19,10 +21,10 @@
     <div class="card">
         <div class="card-body">
 
-        <h4 class="card-title">BLog Page</h4><br>
+        <h4 class="card-title">Add BLog Page</h4><br>
         
 
-        <form method="post" action="{{route('store.portfolio')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('store.blog')}}" enctype="multipart/form-data">
             @csrf
         
         <div class="row mb-3">
@@ -30,9 +32,11 @@
             <div class="col-sm-10">
             <select name="blog_category_id" class="form-select" aria-label="Default select example">
                 <option selected="">Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+
+                @foreach($categories as $cat)                
+                <option value="{{$cat->id}}">{{$cat->blog_category}}</option>
+                @endforeach
+
             </select>
             </div>
         </div>           
@@ -52,7 +56,7 @@
         <div class="row mb-3">
             <label for="example-text-input" class="col-sm-2 col-form-label">Blog Tags</label>
             <div class="col-sm-10">
-                <input name="blog_tags" value="home,tech" class="form-control" type="text" data-role="tagsinput">
+                <input name="blog_tags" value="dev,tech" class="form-control" type="text" data-role="tagsinput">
             </div>
         </div>          
 
