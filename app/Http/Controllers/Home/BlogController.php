@@ -55,7 +55,7 @@ class BlogController extends Controller
 
     public function UpdateBlog(Request $request){
 
-    $blogs_id = $request->id;
+    $blog_id = $request->id;
 
     if ($request->file('blog_image')) {
         $image = $request->file('blog_image');
@@ -63,7 +63,7 @@ class BlogController extends Controller
         Image::make($image)->fit(430,327)->save('upload/blog/'.$name_gen);
         $save_url = 'upload/blog/'.$name_gen;
 
-        Blog::findOrFail($blogs_id)->update([
+        Blog::findOrFail($blog_id)->update([
             'blog_category_id' => $request->blog_category_id,
             'blog_title' => $request->blog_title,
             'blog_tags' => $request->blog_tags,
@@ -80,7 +80,7 @@ class BlogController extends Controller
         
     } else {
 
-        Blog::findOrFail($blogs_id)->update([
+        Blog::findOrFail($blog_id)->update([
             'blog_category_id' => $request->blog_category_id,
             'blog_title' => $request->blog_title,
             'blog_tags' => $request->blog_tags,
@@ -96,6 +96,21 @@ class BlogController extends Controller
 
     } // End Else    
 
+    } //End Method
+
+    public function DeleteBlog($id) {
+        $blogs = Blog::findOrFail($id);
+        $img = $blogs->blog_image;
+        unlink($img);
+
+        Blog::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Blog Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        
+        return redirect()->back()->with($notification);    
     } //End Method
 
 }

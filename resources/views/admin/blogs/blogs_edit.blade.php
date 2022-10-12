@@ -24,7 +24,7 @@
         <h4 class="card-title">Edit BLog Page</h4><br>
         
 
-        <form method="post" action="{{route('update.blog',$blogs->id)}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('update.blog')}}" enctype="multipart/form-data">
             @csrf
 
         <input type="hidden" name="id" value="{{$blogs->id}}">
