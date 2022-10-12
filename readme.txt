@@ -91,3 +91,8 @@ php artisan migrate
 php artisan make:model Portfolio -m
 php artisan migrate
 php artisan make:controller Home/PortfolioController
+
+php artisan make:model BlogCategory -m
+php artisan migrate
+
+php artisan make:controller Home/BlogCategoryController

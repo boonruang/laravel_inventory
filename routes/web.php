@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\About\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\BlogCategoryController;
 
 
 Route::get('/', function () {
@@ -59,6 +60,11 @@ Route::controller(PortfolioController::class)->group(function() {
 
     // frontend route
     Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
+});
+
+// BlogCategory All Route
+Route::controller(BlogCategoryController::class)->group(function() {
+    Route::get('/all/blog/category','AllBlogCategory')->name('all.blog.category');
 });
 
 Route::get('/dashboard', function () {
