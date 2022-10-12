@@ -21,7 +21,7 @@ class BlogController extends Controller
     public function AddBlog() {
         $categories = BlogCategory::orderBy('blog_category','ASC')->get();
         return view('admin.blogs.blogs_add',compact('categories'));
-    }
+    } // End Method
 
     public function StoreBlog(Request $request){
 
@@ -45,6 +45,57 @@ class BlogController extends Controller
         );
 
         return redirect()->route('all.blog')->with($notification);     
-    }
+    } // End Method
+
+    public function EditBlog($id) {
+        $blogs = Blog::findOrFail($id);
+        $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+        return view('admin.blogs.blogs_edit',compact('blogs','categories'));
+    } // End Method
+
+    public function UpdateBlog(Request $request){
+
+    $blogs_id = $request->id;
+
+    if ($request->file('blog_image')) {
+        $image = $request->file('blog_image');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension(); // 46443216545.jpg
+        Image::make($image)->fit(430,327)->save('upload/blog/'.$name_gen);
+        $save_url = 'upload/blog/'.$name_gen;
+
+        Blog::findOrFail($blogs_id)->update([
+            'blog_category_id' => $request->blog_category_id,
+            'blog_title' => $request->blog_title,
+            'blog_tags' => $request->blog_tags,
+            'blog_description' => $request->blog_description,
+            'blog_image' => $save_url,
+        ]);
+
+        $notification = array(
+            'message' => 'Blog Updated with Image Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.blog')->with($notification);    
+        
+    } else {
+
+        Blog::findOrFail($blogs_id)->update([
+            'blog_category_id' => $request->blog_category_id,
+            'blog_title' => $request->blog_title,
+            'blog_tags' => $request->blog_tags,
+            'blog_description' => $request->blog_description,
+        ]);
+
+        $notification = array(
+            'message' => 'Blog Updated without Image Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.blog')->with($notification);    
+
+    } // End Else    
+
+    } //End Method
 
 }
