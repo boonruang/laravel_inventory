@@ -100,4 +100,13 @@ php artisan make:controller Home/BlogCategoryController
 php artisan make:model Blog -m
 php artisan migrate
 
-php artisan make:controller Home/Blog
+php artisan make:controller Home/BlogController
+
+Model BelongsTo
+public function category() {
+    return $this->belongsTo(BlogCategory::class,'blog_category_id','id');
+}
+How to access on view
+$item['category']['blog_category']
+
+Carbon\Carbon::parse($item->created_at)->diffForHumans()
