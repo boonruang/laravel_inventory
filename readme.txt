@@ -118,3 +118,5 @@ php artisan make:controller Home/FooterController
 
 php artisan make:model Contact -m
 php artisan make:controller Home/ContactController
+
+Add middleware('auth') to AdminController (web.php)
