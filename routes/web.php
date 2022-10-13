@@ -12,15 +12,17 @@ use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('frontend.index');
-});
-
-// Route::controller(DemoController::class)->group(function() {
-//     Route::get('/about','Index')->name('about.page')->middleware('check');
-//     Route::get('/contact','ContactMethod')->name('contact.page');
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return view('frontend.index');
 // });
+
+Route::controller(DemoController::class)->group(function() {
+    Route::get('/home','HomeMain')->name('home');
+
+    Route::get('/about','Index')->name('about.page')->middleware('check');
+    Route::get('/contact','ContactMethod')->name('contact.page');
+});
 
 // Admin All Route
 Route::controller(AdminController::class)->group(function() {
