@@ -227,7 +227,7 @@
                             <ul class="sidebar__cat">
 
                             @foreach ($allcategories as $item)
-                                 <li class="sidebar__cat__item"><a href="blog.html">{{$item->blog_category}}</a></li>                               
+                                 <li class="sidebar__cat__item"><a href="{{route('category.blog',$item->id)}}">{{$item->blog_category}}</a></li>                               
                             @endforeach
 
                             </ul>
