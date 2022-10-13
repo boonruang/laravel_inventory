@@ -9,7 +9,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="breadcrumb__wrap__content">
-                        <h2 class="title">Recent Article</h2>
+                        <h2 class="title">{{$categoryname->blog_category}}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -51,8 +51,8 @@
                                 <div class="thumb"><img src="{{asset($item->blog_image)}}" alt=""></div>
                                 <span class="post__by">By : <a href="#">Halina Spond</a></span>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">{{$item->blog_title}}</a></h2>
-                            <p>{!!$item->blog_description!!}</p>
+                            <h2 class="title"><a href="{{route('blog.details',$item->id)}}">{{$item->blog_title}}</a></h2>
+                            <p>{!! Str::limit($item->blog_description, 200) !!}</p>
                             <ul class="blog__post__meta">
                                 <li><i class="fal fa-calendar-alt"></i> {{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</li>
 
@@ -90,10 +90,10 @@
                             @foreach ($allblogs as $item)
                             <li class="rc__post__item">
                                 <div class="rc__post__thumb">
-                                    <a href="blog-details.html"><img src="{{asset($item->blog_image)}}" alt=""></a>
+                                    <a href="{{route('blog.details',$item->id)}}"><img src="{{asset($item->blog_image)}}" alt=""></a>
                                 </div>
                                 <div class="rc__post__content">
-                                    <h5 class="title"><a href="blog-details.html">{{$item->blog_title}}</a></h5>
+                                    <h5 class="title"><a href="{{route('blog.details',$item->id)}}">{{$item->blog_title}}</a></h5>
                                     <span class="post-date"><i class="fal fa-calendar-alt"></i> {{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
                                 </div>
                             </li>                                

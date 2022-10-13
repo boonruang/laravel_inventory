@@ -110,3 +110,5 @@ How to access on view
 $item['category']['blog_category']
 
 Carbon\Carbon::parse($item->created_at)->diffForHumans()
+
+Str::limit($item->blog_description, 200)
