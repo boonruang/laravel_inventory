@@ -21,9 +21,6 @@
             <div class="col-sm-10">
                 <input name="blog_category" class="form-control" >
 
-                @error('blog_category')
-                <span class="text-danger">{{ $message}}</span>
-                @enderror
             </div>
         </div>           
         
@@ -42,15 +39,7 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src',e.target.result);
-            }
-            reader.readAsDataURL(e.target.files['0']);
-        });
-    });
+
 </script>
 
 @endsection

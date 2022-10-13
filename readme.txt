@@ -120,3 +120,5 @@ php artisan make:model Contact -m
 php artisan make:controller Home/ContactController
 
 Add middleware('auth') to AdminController (web.php)
+
+remove error validation and replace with java validate.min.js
