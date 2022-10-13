@@ -24,6 +24,7 @@ class FooterController extends Controller
                 'email' => $request->email,
                 'facebook' => $request->facebook,
                 'twitter' => $request->twitter,
+                'copyright' => $request->copyright,
             ]);
 
             $notification = array(
