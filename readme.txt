@@ -122,3 +122,5 @@ php artisan make:controller Home/ContactController
 Add middleware('auth') to AdminController (web.php)
 
 remove error validation and replace with java validate.min.js
+
+replace $i++ with $key+1 AT @foreach ($blogcategory as $key => $item)
