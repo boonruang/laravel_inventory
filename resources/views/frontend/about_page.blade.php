@@ -1,6 +1,11 @@
 @extends('frontend.main_master')            
 @section('main')
 
+@section('title')
+About | VPANO360 Website
+@endsection
+
+
 <!-- main-area -->
 <main>
     <!-- breadcrumb-area -->
