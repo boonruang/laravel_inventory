@@ -112,3 +112,9 @@ $item['category']['blog_category']
 Carbon\Carbon::parse($item->created_at)->diffForHumans()
 
 Str::limit($item->blog_description, 200)
+
+php artisan make:model Footer -m
+php artisan make:controller Home/FooterController
+
+php artisan make:model Contact -m
+php artisan make:controller Home/ContactController
