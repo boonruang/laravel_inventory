@@ -124,3 +124,7 @@ Add middleware('auth') to AdminController (web.php)
 remove error validation and replace with java validate.min.js
 
 replace $i++ with $key+1 AT @foreach ($blogcategory as $key => $item)
+
+Add paginate to controller (replace get())
+$allblogs = Blog::latest()->paginate(3);
+use in VIEW $allblogs->links();
