@@ -128,3 +128,6 @@ replace $i++ with $key+1 AT @foreach ($blogcategory as $key => $item)
 Add paginate to controller (replace get())
 $allblogs = Blog::latest()->paginate(3);
 use in VIEW $allblogs->links();
+
+custom Pagination theme
+php artisan vendor:publish --tag=laravel-pagination

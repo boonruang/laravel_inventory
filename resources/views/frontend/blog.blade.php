@@ -66,9 +66,8 @@ Blog | VPANO360 Website
                     </div>                       
                     @endforeach
 
-
                     <div class="pagination-wrap">
-                        {{$allblogs->links()}}
+                        {{$allblogs->links('vendor.pagination.custom')}}
                     </div>
                 </div>
                 <div class="col-lg-4">
