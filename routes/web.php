@@ -18,7 +18,7 @@ use App\Http\Controllers\Home\ContactController;
 // });
 
 Route::controller(DemoController::class)->group(function() {
-    Route::get('/home','HomeMain')->name('home');
+    Route::get('/','HomeMain')->name('home');
 
     Route::get('/about','Index')->name('about.page')->middleware('check');
     Route::get('/contact','ContactMethod')->name('contact.page');
@@ -92,7 +92,7 @@ Route::controller(BlogController::class)->group(function() {
     // frontend route
     Route::get('/blog/details/{id}','BlogDetails')->name('blog.details');
     Route::get('/category/blog/{id}','CategoryBlog')->name('category.blog');
-    
+
     Route::get('/blog','HomeBlog')->name('home.blog');
 
 });
