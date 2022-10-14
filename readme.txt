@@ -131,3 +131,13 @@ use in VIEW $allblogs->links();
 
 custom Pagination theme
 php artisan vendor:publish --tag=laravel-pagination
+
+backup full project by running 3 clear command above
+1. export db 2. backup project1
+
+.htaccess from url/public to /
+<IfModule mod_rewrite.c>
+   RewriteEngine on     
+   RewriteCond %{REQUEST_URI} !^public
+   RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
